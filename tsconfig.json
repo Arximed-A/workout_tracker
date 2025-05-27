@@ -1,4 +1,44 @@
 {
   // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "strictNullChecks": false,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    //"resolveJsonModule": true, было
+    "baseUrl": "./src",
+    "types": [
+      "vite/client",
+      "element-plus/global"
+    ],
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+    ],
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "components.d.ts",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
