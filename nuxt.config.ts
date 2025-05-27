@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import {defineNuxtConfig} from 'nuxt/config'
 
 export default defineNuxtConfig({
@@ -7,10 +6,18 @@ export default defineNuxtConfig({
   imports: {
     autoImport: false // полностью отключает автоимпорт
   },
+  i18n: {
+    defaultLocale: 'ru',
+    locales: [
+      {code: 'en', name: 'English', file: 'en.json'},
+      {code: 'ru', name: 'Русский', file: 'ru.json'},
+    ],
+  },
   modules: [
     '@nuxt/test-utils',
     '@nuxt/scripts',
     '@nuxt/eslint',
-    '@element-plus/nuxt'
+    '@element-plus/nuxt',
+    '@nuxtjs/i18n'
   ]
 })
