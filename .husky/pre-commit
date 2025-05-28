@@ -1,0 +1,4 @@
+echo "➡️ Husky: pre-commit hook started"
+
+node ./update-version.js
+git add package.json
