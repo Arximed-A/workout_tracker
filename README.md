@@ -4,12 +4,13 @@
 [![Vue](https://img.shields.io/badge/Vue-3.3.4-green?logo=vue.js)](https://vuejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0.2-blue?logo=typescript)](https://www.typescriptlang.org)
 [![PNPM](https://img.shields.io/badge/pnpm-8.6.5-orange?logo=pnpm)](https://pnpm.io)
+[![Docker](https://img.shields.io/badge/Docker-✓-blue?logo=docker)](https://www.docker.com)
 
 ## 🚀 Быстрый старт
 
 ### Предварительные требования
 
-- Node.js 22.15
+- Node.js 20.9
 - PNPM 10
 
 ### Установка
@@ -17,6 +18,10 @@
 1. Установите зависимости:
 
 pnpm install
+
+2. Запустите проект:
+
+pnpm run dev
 
 ### Основной стек
 
