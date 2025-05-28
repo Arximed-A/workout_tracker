@@ -2,6 +2,7 @@
 import {ref} from "vue";
 
 const isCollapse = ref<boolean>(false)
+
 </script>
 
 <template>
