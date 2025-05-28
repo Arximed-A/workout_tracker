@@ -1,75 +1,51 @@
-# Nuxt Minimal Starter
+# 🏋️ Workout Tracker
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Nuxt](https://img.shields.io/badge/Nuxt-3.11.1-green?logo=nuxt.js)](https://nuxt.com)
+[![Vue](https://img.shields.io/badge/Vue-3.3.4-green?logo=vue.js)](https://vuejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0.2-blue?logo=typescript)](https://www.typescriptlang.org)
+[![PNPM](https://img.shields.io/badge/pnpm-8.6.5-orange?logo=pnpm)](https://pnpm.io)
 
-## Setup
+## 🚀 Быстрый старт
 
-Make sure to install dependencies:
+### Предварительные требования
+
+- Node.js 22.15
+- PNPM 10
+
+### Установка
+
+1. Установите зависимости:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
 
-# yarn
-yarn install
+### Основной стек
 
-# bun
-bun install
-```
+- **Nuxt 3** - фреймворк для Vue.js
+- **Vue 3** - прогрессивный JavaScript-фреймворк
+- **TypeScript** - типизированный JavaScript
+- **vue-router** - маршрутизация
+- **pinia** - управление состоянием
+- **vueuse** - утилиты
 
-## Development Server
+### 🌍 Интернационализация
 
-Start the development server on `http://localhost:3000`:
+- **i18n** - многоязычная поддержка
 
-```bash
-# npm
-npm run dev
+### 🎨 UI компоненты
 
-# pnpm
-pnpm dev
+- **element-plus** - UI библиотека
+- **tailwindcss** - CSS фреймворк
 
-# yarn
-yarn dev
+### 🧹 Форматирование и линтинг
 
-# bun
-bun run dev
-```
+- **esLint** - проверка кода
 
-## Production
+### 🔄 CI/CD
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- **husky** - git hooks:
+    - Пре-коммит хуки для:
+        - Проверки линтером
+        - Запуска тестов
+        - Проверки сборки
+        - Автоинкремента версии приложения

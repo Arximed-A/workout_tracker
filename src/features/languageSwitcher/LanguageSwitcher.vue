@@ -6,10 +6,9 @@ const { t } = useI18n()
 </script>
 
 <template>
-	language
-	<button v-for="locale in locales" :key="locale.code" @click="setLocale(locale.code)">
+	<div v-for="locale in locales" :key="locale.code" @click="setLocale(locale.code)">
 		{{ locale.name }}
-	</button>
+	</div>
 	<h1>{{ t('welcome') }}</h1>
 </template>
 

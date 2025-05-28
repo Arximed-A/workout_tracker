@@ -7,6 +7,9 @@ export default defineNuxtConfig({
 	imports: {
 		autoImport: false, // полностью отключает автоимпорт
 	},
+	alias: {
+		"@": "/src",
+	},
 	i18n: {
 		defaultLocale: "ru",
 		locales: [
@@ -14,7 +17,7 @@ export default defineNuxtConfig({
 			{ code: "ru", name: "Русский", file: "ru.json" },
 		],
 	},
-	css: ["~/app/css/tailwindcss.css"],
+	css: ["@/app/css/tailwindcss.css"],
 	vite: {
 		plugins: [
 			tailwindcss(),
@@ -26,5 +29,6 @@ export default defineNuxtConfig({
 		"@nuxt/eslint",
 		"@element-plus/nuxt",
 		"@nuxtjs/i18n",
+		"@pinia/nuxt",
 	],
 })
