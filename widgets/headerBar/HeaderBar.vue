@@ -4,9 +4,10 @@ import ThemeSwitcher from "../../features/themeSwitcher/ThemeSwitcher.vue"
 </script>
 
 <template>
-	header
-	<ThemeSwitcher />
-	<LanguageSwitcher />
+	<div>
+		<ThemeSwitcher />
+		<LanguageSwitcher />
+	</div>
 </template>
 
 <style scoped>

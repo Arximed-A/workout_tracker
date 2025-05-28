@@ -1,3 +1,4 @@
+import tailwindcss from "@tailwindcss/vite"
 import { defineNuxtConfig } from "nuxt/config"
 
 export default defineNuxtConfig({
@@ -11,6 +12,12 @@ export default defineNuxtConfig({
 		locales: [
 			{ code: "en", name: "English", file: "en.json" },
 			{ code: "ru", name: "Русский", file: "ru.json" },
+		],
+	},
+	css: ["~/app/css/tailwindcss.css"],
+	vite: {
+		plugins: [
+			tailwindcss(),
 		],
 	},
 	modules: [

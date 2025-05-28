@@ -1,5 +1,7 @@
 echo "➡️ Husky: pre-commit hook started"
 
+npm run lint
+
 npm run build
 
 node ./update-version.js
