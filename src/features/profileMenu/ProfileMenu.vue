@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useUserStore } from "../../shared/states/userStore/userStore.ts"
+// import { useUserStore } from "../../shared/states/userStore/userStore.ts"
 
-const userStore = useUserStore()
+// const userStore = useUserStore()
 </script>
 
 <template>
-	<el-avatar :src="userStore.avatar" />
+	avatar
 </template>
 
 <style scoped>

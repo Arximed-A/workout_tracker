@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import "@/app/css/reset.css"
-import "element-plus/theme-chalk/dark/css-vars.css"
 </script>
 
 <template>
-	<NuxtPage />
+	<div class="dark:bg-black dark:text-white min-h-screen h-full">
+		<NuxtPage />
+	</div>
 </template>

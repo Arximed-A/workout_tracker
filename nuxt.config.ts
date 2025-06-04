@@ -10,6 +10,9 @@ export default defineNuxtConfig({
 	alias: {
 		"@": "/src",
 	},
+	dir: {
+		pages: "src/pages",
+	},
 	i18n: {
 		defaultLocale: "ru",
 		locales: [
@@ -17,7 +20,8 @@ export default defineNuxtConfig({
 			{ code: "ru", name: "Русский", file: "ru.json" },
 		],
 	},
-	css: ["@/app/css/tailwindcss.css"],
+	// css: ["@/assets/css/tailwind.css"],
+	css: ["@/app/css/tailwind.css"],
 	vite: {
 		plugins: [
 			tailwindcss(),
@@ -27,7 +31,7 @@ export default defineNuxtConfig({
 		"@nuxt/test-utils",
 		"@nuxt/scripts",
 		"@nuxt/eslint",
-		"@element-plus/nuxt",
+		// "@element-plus/nuxt",
 		"@nuxtjs/i18n",
 		"@pinia/nuxt",
 	],
