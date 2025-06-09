@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useI18n } from "#imports"
-import { reactive } from "vue"
 import ButtonBase from "@/shared/ui/buttonBase/ButtonBase.vue"
 import InputBase from "@/shared/ui/inputBase/InputBase.vue"
 import LabelBase from "@/shared/ui/labelBase/LabelBase.vue"
@@ -12,18 +10,32 @@ export interface ILogin {
 	password: string
 }
 
+const toast = useToast()
 const { t } = useI18n()
 const form = reactive<ILogin>({
-	login: "",
-	password: "",
+	login: "test_all",
+	password: "test_all",
 })
 
 async function sendForm() {
-	const data = await $fetch(`${API}/profile`, {
-		method: "POST",
-		body: form,
-	})
-	console.warn(data)
+	if (form.login === "" || form.password === "") {
+		toast.info({ message: t("Заполните обязательные поля") })
+		return
+	}
+	try {
+		const data = await $fetch(`${API}/profile`, {
+			method: "POST",
+			body: form,
+		})
+
+		await navigateTo("/", { redirectCode: 301 })
+	}
+	catch (e: unknown) {
+		if (e.statusCode === 401) {
+			return toast.error({ message: "Пользователь не найден" })
+		}
+		return toast.error({ message: t("Произошла неизвестная ошибка") })
+	}
 }
 </script>
 
@@ -36,23 +48,23 @@ async function sendForm() {
 			<h1 class="text-center">
 				{{ t('Войти') }}
 			</h1>
-			<LabelBase>
+			<LabelBase required>
 				<template #title>
 					{{ t('Логин') }}
 				</template>
 				<template #default>
-					<InputBase v-model="form.login" />
+					<InputBase v-model="form.login" placeholder="Введите логин" />
 				</template>
 			</LabelBase>
-			<LabelBase>
+			<LabelBase required>
 				<template #title>
 					{{ t('Пароль') }}
 				</template>
 				<template #default>
-					<InputBase v-model="form.password" />
+					<InputBase v-model="form.password" type="password" placeholder="Введите пароль" />
 				</template>
 			</LabelBase>
-			<ButtonBase @click="sendForm">
+			<ButtonBase class="w-full" @click="sendForm">
 				{{ t('Отправить') }}
 			</ButtonBase>
 		</div>
