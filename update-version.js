@@ -1,10 +1,10 @@
 // update-version.js
-import { readFileSync, writeFileSync } from "node:fs"
+import {readFileSync, writeFileSync} from "node:fs"
 
 try {
 	// Читаем package.json
 	const packageJson = JSON.parse(readFileSync("./package.json", "utf8"))
-	// eslint-disable-next-line no-console
+
 	console.log("🔄 Текущая версия:", packageJson.version)
 
 	const [major, minor, patch] = packageJson.version.split(".").map(part =>
@@ -16,11 +16,10 @@ try {
 
 	packageJson.version = newVersion
 	writeFileSync("./package.json", `${JSON.stringify(packageJson, null, 2)}\n`)
-	// eslint-disable-next-line no-console
+
 	console.log(`✅ Версия обновлена: ${newVersion}`)
-}
-catch (error) {
+} catch (error) {
 	console.error("❌ Ошибка:", error.message)
-	const process = require("node:process")
-	process.exit(1)
+	// const process = require("node:process")
+	// process.exit(1)
 }
