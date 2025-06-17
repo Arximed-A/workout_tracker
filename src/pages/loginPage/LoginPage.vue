@@ -2,7 +2,7 @@
 import {reactive} from "vue";
 import type {ILoginForm} from "@/pages/loginPage/model/types/typesLoginPage.ts";
 
-import {databases} from '@/shared/appWrite/appwrite'  
+import {databases} from '@/shared/appWrite/appwrite'
 import ButtonBase from "@/shared/ui/base/buttonBase/ButtonBase.vue";
 import InputBase from "@/shared/ui/base/inputBase/InputBase.vue";
 
@@ -36,7 +36,7 @@ const getData = async () => {
       <InputBase v-model="form.password"/>
     </label>
 
-    <ButtonBase @click.prevent="getData">log in</ButtonBase>
+    <ButtonBase text="Отправить" @click.prevent="getData"></ButtonBase>
   </form>
 </template>
 

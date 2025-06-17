@@ -1,13 +1,13 @@
 {
   "name": "workout_tracker",
   "private": true,
-  "version": "0.0.002",
+  "version": "0.0.003",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "lint": "eslint \"**/*.{vue,js}\"",
+    "lint": "eslint \"**/*.{vue,js}\" --ignore-pattern \"dist/**\"",
     "lint:fix": "eslint \"**/*.{vue,js}\" --fix",
     "prepare": "husky"
   },
@@ -18,6 +18,7 @@
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.8",
     "vue": "^3.5.13",
+    "vue-i18n": "^11.1.6",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {

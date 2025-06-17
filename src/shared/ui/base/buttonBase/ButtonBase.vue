@@ -3,9 +3,10 @@ import {ElButton} from 'element-plus'
 
 
 withDefaults(defineProps<{
-  type?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info' | '' ,
+  type?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info' | '',
   disabled?: boolean
   loading?: boolean
+  text: string
 }>(), {
   type: 'primary',
   disabled: false,
@@ -14,12 +15,12 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <el-button 
+  <el-button
     :type="type"
     :disabled="disabled"
     :loading="loading"
   >
-    <slot />
+    {{ text }}
   </el-button>
 </template>
 

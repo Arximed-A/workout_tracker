@@ -9,6 +9,7 @@ export default defineConfig([
 
 	{
 		files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
+		ignores: ["./dist/**"],
 		plugins: {
 			js
 		}, extends: ["js/recommended"]
