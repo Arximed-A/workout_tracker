@@ -1,6 +1,5 @@
 # 🏋️ Workout Tracker
 
-[//]: # ([![Nuxt]&#40;https://img.shields.io/badge/Nuxt-3.11.1-green?logo=nuxt.js&#41;]&#40;https://nuxt.com&#41;)
 [![Vue](https://img.shields.io/badge/Vue-3.3.4-green?logo=vue.js)](https://vuejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0.2-blue?logo=typescript)](https://www.typescriptlang.org)
 [![PNPM](https://img.shields.io/badge/pnpm-8.6.5-orange?logo=pnpm)](https://pnpm.io)
@@ -10,7 +9,7 @@
 
 ### Предварительные требования
 
-- Node.js 20.9
+- Node.js 22.15
 - PNPM 10
 
 ### Установка
@@ -32,13 +31,18 @@ pnpm run dev
 - **pinia** - управление состоянием
 - **vueuse** - утилиты
 
+### 🗄️ Backend
+
+- **appwrite** - БД и сервер
+
 ### 🌍 Интернационализация
 
 - **i18n** - многоязычная поддержка
 
-### 🎨 Стили
+### 🎨 UI
 
-- **tailwindcss** - CSS фреймворк
+- **tailwindcss** - общие стили
+- **Element+** - Компоненты
 
 ### 🧹 Форматирование и линтинг
 

@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import {ElInput} from 'element-plus';
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n()
 
 withDefaults(defineProps<{
   disabled?: boolean
   placeholder?: string
 }>(), {
   disabled: false,
-  placeholder: 'текст'
+  placeholder: 'Введите текст'
 })
 
 const value = defineModel<string>({required: true})
+
+
 </script>
 <template>
-  <el-input 
+  <el-input
     v-model="value"
     :disabled="disabled"
-    :placeholder="placeholder"
+    :placeholder="t(placeholder)"
   />
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {ElButton} from 'element-plus'
+import {useI18n} from "vue-i18n";
 
-
+const {t} = useI18n()
 withDefaults(defineProps<{
   type?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info' | '',
   disabled?: boolean
@@ -20,7 +20,7 @@ withDefaults(defineProps<{
     :disabled="disabled"
     :loading="loading"
   >
-    {{ text }}
+    {{ t(text) }}
   </el-button>
 </template>
 
