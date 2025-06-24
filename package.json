@@ -1,7 +1,7 @@
 {
   "name": "workout_tracker",
   "private": true,
-  "version": "0.0.005",
+  "version": "0.0.006",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,11 +9,13 @@
     "preview": "vite preview",
     "lint": "eslint \"**/*.{vue,js}\" --ignore-pattern \"dist/**\"",
     "lint:fix": "eslint \"**/*.{vue,js}\" --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "analyze:bundle": "npx vite-bundle-visualizer"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@tailwindcss/vite": "^4.1.10",
+    "@vueuse/core": "^13.4.0",
     "appwrite": "18.1.1",
     "dayjs": "^1.11.13",
     "element-plus": "^2.10.2",

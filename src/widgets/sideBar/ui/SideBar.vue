@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue'
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-} from '@element-plus/icons-vue'
+import {Document, Location, Menu as IconMenu, Setting,} from '@element-plus/icons-vue'
 
 const isCollapse = ref(true)
 const handleOpen = (key: string, keyPath: string[]) => {
@@ -17,6 +12,13 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 
 <template>
+  <!--  <el-icon>-->
+  <!--    <DArrowRight/>-->
+  <!--  </el-icon>-->
+  <!--  <el-icon>-->
+  <!--    <DArrowLeft/>-->
+  <!--  </el-icon>-->
+
   <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
     <el-radio-button :value="false">expand</el-radio-button>
     <el-radio-button :value="true">collapse</el-radio-button>

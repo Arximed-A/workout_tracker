@@ -1,16 +1,21 @@
 <script setup lang="ts">
 import {useI18n} from "vue-i18n";
+import {computed} from "vue";
 
 const {t} = useI18n()
-withDefaults(defineProps<{
+const props = withDefaults(defineProps<{
   type?: 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info' | '',
   disabled?: boolean
   loading?: boolean
-  text: string
+  text?: string
 }>(), {
   type: 'primary',
   disabled: false,
   loading: false
+})
+
+const text = computed(() => {
+  return props.text ? props.text : t("отправить")
 })
 </script>
 
@@ -20,7 +25,7 @@ withDefaults(defineProps<{
     :disabled="disabled"
     :loading="loading"
   >
-    {{ t(text) }}
+    {{ (text) }}
   </el-button>
 </template>
 

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {account, databases} from '@/shared/appWrite/appwrite.ts'
 import {collectionsId, DBID} from "@/shared/appWrite/settings.ts";
-import {useRouter} from "vue-router";
 import {RoutePath} from "@/shared/model/router/routerPaths.ts";
 import {fetchUpdateVerification} from "@/pages/verificationPage/api/apiVerification.ts";
 
 const route = useRoute()
 const router = useRouter()
+
 const isLoading = ref<boolean>(false)
 
 onMounted(async () => {

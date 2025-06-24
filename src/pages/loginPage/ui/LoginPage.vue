@@ -1,28 +1,33 @@
 <script setup lang="ts">
 import {reactive} from "vue";
 import type {ILoginForm} from "@/pages/loginPage/model/types/typesLoginPage.ts";
-import {databases} from '@/shared/appWrite/appwrite.ts'
-import ButtonBase from "@/shared/ui/base/buttonBase/ButtonBase.vue";
-import InputBase from "@/shared/ui/base/inputBase/InputBase.vue";
-import LabelBase from "@/shared/ui/base/labelBase/LabelBase.vue";
-import WrapperBase from "@/shared/ui/base/wrapperBase/WrapperBase.vue";
-import FullScreenWrapper from "@/shared/ui/base/fullScreenWrapper/FullScreenWrapper.vue";
+import {account} from '@/shared/appWrite/appwrite.ts'
+import ButtonBase from "@/shared/ui/buttonBase/ButtonBase.vue";
+import InputBase from "@/shared/ui/inputBase/InputBase.vue";
+import LabelBase from "@/shared/ui/labelBase/LabelBase.vue";
+import WrapperBase from "@/shared/ui/wrapperBase/WrapperBase.vue";
+import FullScreenWrapper from "@/shared/ui/fullScreenWrapper/FullScreenWrapper.vue";
 import {RoutePath} from "@/shared/model/router/routerPaths.ts";
-import LinkBase from "@/shared/ui/base/LinkBase/LinkBase.vue";
+import LinkBase from "@/shared/ui/LinkBase/LinkBase.vue";
+import TextBase from "@/shared/ui/textBase/TextBase.vue";
+import {useRouter} from "vue-router";
+import {useI18n} from "vue-i18n";
 
-// const router = useRouter()
+const {t} = useI18n()
+const router = useRouter()
 const form = reactive<ILoginForm>({
-  login: 'Drunka-3@yandex.ru',
-  password: '12345678'
+  email: '',
+  password: ''
 })
 // const isLoading = ref<boolean>(false)
 
-const getData = async () => {
-  const result = await databases.listDocuments(
-    '6847eb1a003d58309fb8',
-    '6847eb6b0015329de093',
-  );
-  console.log(result);
+const login = async () => {
+  try {
+    await account.createEmailPasswordSession(form.email, form.password)
+    await router.push(RoutePath.home)
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 
@@ -31,16 +36,17 @@ const getData = async () => {
 <template>
   <FullScreenWrapper>
     <WrapperBase>
+      <TextBase :text="t('вход')" size="large"/>
       <LabelBase text="Логин">
-        <InputBase v-model="form.login"/>
+        <InputBase v-model="form.email"/>
       </LabelBase>
       <LabelBase text="Пароль">
         <InputBase v-model="form.password"/>
       </LabelBase>
-      <ButtonBase text="Отправить" @click.prevent="getData" class="mb-6"/>
+      <ButtonBase text="Отправить" @click.prevent="login" class="mb-6"/>
       <div class="flex justify-between">
-        <LinkBase text="Нет аккаута?" :to="RoutePath.signUp"/>
-        <LinkBase text="Забыли пароль?" :to="RoutePath.signUp"/>
+        <LinkBase :text="t('нет аккаута') + '?'" :to="RoutePath.signUp"/>
+        <LinkBase :text="t('забыли пароль') + '?'" :to="RoutePath.recoveryPassword"/>
       </div>
     </WrapperBase>
   </FullScreenWrapper>

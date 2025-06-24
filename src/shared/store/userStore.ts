@@ -8,10 +8,9 @@ export const useUserStore = defineStore('user', () => {
 })
 
 interface IUser {
-  id: string, // check
+  $id: string, // check
   email: string,
   avatar: string | null,
-  language: 'en' | 'ru',
   first_name: string,
   second_name: string,
   weight: number,

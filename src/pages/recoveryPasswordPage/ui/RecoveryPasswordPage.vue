@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  Я ещё разрабатываюсь
+  Ну забыл и забыл
 </template>
 
 <style scoped>

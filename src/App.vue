@@ -19,7 +19,8 @@ const currentLanguage = computed(() => userStore.language === 'ru' ? ru : en)
         <HeaderBar/>
       </el-header>
       <el-container>
-        <el-aside v-if="false" width="200px">
+        <!--        TODO сделать завязку на props от роутов-->
+        <el-aside v-if="userStore.user" width="200px">
           <SideBar/>
         </el-aside>
         <el-main>

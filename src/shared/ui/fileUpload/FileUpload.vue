@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  Я ещё разрабатываюсь
+  file
 </template>
 
 <style scoped>

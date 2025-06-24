@@ -1,21 +1,12 @@
+import ru from "./ru/ru.json"
+import en from "./en/en.json"
+
 export default {
   legacy: false,
   locale: 'ru',
   fallbackLocale: 'en',
   messages: {
-    en: {
-      'Логин': 'Login',
-      'Пароль': 'Password',
-      'Введите текст': 'Enter the text',
-      'Отправить': 'Send',
-      'Зарегистрироваться': 'Register',
-    },
-    ru: {
-      'Логин': 'Логин',
-      'Пароль': 'Пароль',
-      'Введите текст': 'Введите текст',
-      'Отправить': 'Отправить',
-      'Зарегистрироваться': 'Зарегистрироваться',
-    }
+    en: en,
+    ru: ru
   }
 }
