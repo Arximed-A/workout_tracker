@@ -17,7 +17,9 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),],
-  base: '/',
+  base: process.env.NODE_ENV === 'production'
+    ? '/workout_tracker/'
+    : '/',
   server: {
     port: 5173
   },
