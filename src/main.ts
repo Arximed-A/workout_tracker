@@ -10,9 +10,18 @@ import i18config from '@/app/i18n/i18n.ts'
 const i18n = createI18n(i18config)
 
 const pinia = createPinia()
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js', {scope: '/'})
-  })
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(function (registration) {
+      console.log("Service worker зарегистрирован:", registration);
+    })
+    .catch(function (error) {
+      console.log("Ошибка при регистрации service worker-а:", error);
+    });
+} else {
+  console.log("Текущий браузер не поддерживает service worker-ы");
 }
+
 createApp(App).use(pinia).use(router).use(i18n).mount('#app')
