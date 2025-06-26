@@ -6,14 +6,21 @@ import {fileURLToPath} from 'url'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import {ElementPlusResolver} from 'unplugin-vue-components/resolvers'
+import {VitePWA} from 'vite-plugin-pwa'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), tailwindcss(), AutoImport({
-    resolvers: [ElementPlusResolver()],
-  }),
+  plugins: [
+    vue(),
+    tailwindcss(),
+    VitePWA({registerType: 'autoUpdate'}),
+    AutoImport({
+      resolvers: [
+        ElementPlusResolver()
+      ],
+    }),
     Components({
       resolvers: [ElementPlusResolver()],
     }),],
