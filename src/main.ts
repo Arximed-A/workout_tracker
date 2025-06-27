@@ -25,3 +25,4 @@ if ("serviceWorker" in navigator) {
 }
 
 createApp(App).use(pinia).use(router).use(i18n).mount('#app')
+

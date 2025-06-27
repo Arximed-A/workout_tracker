@@ -5,10 +5,17 @@ import UserProfileBar from "@/feauteres/userProfileBar/ui/UserProfileBar.vue";
 import {useUserStore} from "@/shared/store/userStore.ts";
 
 const userStore = useUserStore()
+//eslint disable next line
+const versionApp: string = __APP_VERSION__;
+
 </script>
 
 <template>
-  <div class="header flex items-center justify-end h-full gap-7">
+  <div class="header flex items-center  h-full gap-7">
+    <div class="basis-full">
+      {{ "v" + versionApp }}
+
+    </div>
     <ThemeSwitcher/>
     <LanguageSwitcher/>
     <UserProfileBar v-if="userStore.user"/>
