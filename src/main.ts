@@ -13,7 +13,7 @@ const pinia = createPinia()
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("/sw.js")
+    .register(import.meta.env.PROD ? '/sw.js' : "/workout_tracker/sw.js")
     .then(function (registration) {
       console.log("Service worker зарегистрирован:", registration);
     })
