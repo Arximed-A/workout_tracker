@@ -38,7 +38,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.PROD ? 'workout_tracker' : ''),
   routes,
 });
 
