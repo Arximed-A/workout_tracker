@@ -5,7 +5,7 @@ import UserProfileBar from "@/feauteres/userProfileBar/ui/UserProfileBar.vue";
 import {useUserStore} from "@/shared/store/userStore.ts";
 
 const userStore = useUserStore()
-//eslint disable next line
+ 
 const versionApp: string = __APP_VERSION__;
 
 </script>

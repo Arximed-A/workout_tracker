@@ -2,8 +2,7 @@ echo "➡️ Husky: pre-commit hook started"
 
 
 
-
-
+pnpm run build
 
 node ./update-version.js
 git add package.json
